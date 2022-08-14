@@ -1,0 +1,72 @@
+POST http://localhost:3000/api/chat/conversations HTTP/1.1
+Content-Type: application/json
+
+{
+    "currentUser": "xmFbTSBmzbTked5Hs719NpR70wB3"
+}
+
+###
+
+POST http://localhost:5000/api/chat/messages HTTP/1.1
+Content-Type: application/json
+
+{
+    "chatID": "6Oiu56VtsvPZ3ipRK6oX"
+}
+
+###
+
+POST http://localhost:5000/api/chat/addConversation HTTP/1.1
+Content-Type: application/json
+
+{
+    "currentUser": "OzwyMscwQoa0zcsiT9dTJrROKQj1"
+}
+
+###
+
+POST http://localhost:3000/api/chat/sendMessage HTTP/1.1
+Content-Type: application/json
+
+{
+    "chatID": "Xl2Cl1pdUivwmDcAe11k",
+    "message":"Realtime",
+    "sender":"T9DcEKoVJTUbOp0vHitZrD8iJpF2",
+    "type": "message",
+    "status": "Delivered"
+}
+
+###
+
+POST http://localhost:3000/api/chat/contractStatus HTTP/1.1
+Content-Type: application/json
+
+{
+    "chatID": "4qQzh9L4bdxvfcsnoDSU"
+}
+
+###
+
+POST http://localhost:3000/api/contract HTTP/1.1
+Content-Type: application/json
+
+{
+  "gigId": "QAsJSLJB63GGBd8SyuMc",
+  "gigName": "tester",
+  "gigPrice": "123",
+  "completionPeriod": "123 days",
+  "collaborationPhase": "Contract Sent",
+  "startDate": "",
+  "endDate": "",
+  "milestones": [],
+  "hasDispute": false,
+  "hasGigCompletionRequest": false,
+  "hasMilestoneCompletionRequest": false,
+  "sponseeId": "cwjwdaKR3tUZuOSFkwKSqnNOZiY2",
+  "sponsorId": "b6ahK3OjyBUOgYrrGwq2oGeVDrs2",
+  "termsAndConditions": "this is to test if the time&c name can be the same",
+  "hasProofs": false,
+  "currency": "SGD",
+  "sponsorCompany": "company",
+  "chatID":"1GRckGcDuvIFAttFcZXd"
+}
