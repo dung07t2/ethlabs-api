@@ -53,7 +53,18 @@ yarn deploy
 ## Deployment
 
 -   [Deployed on Gcloud](https://us-central1-rayprojects.cloudfunctions.net/ethlabs)
--   [Deployed on Heroku - old code](https://ethlabs.herokuapp.com/)
+-   [Deployed on Heroku](https://ethlabs.herokuapp.com/)
+
+## Screenshots
+
+![structure](./screenshots/structure.png)
+![firestore db](./screenshots/firestore.png)
+![function](./screenshots/function.png)
+
+## Issues
+
+-   I took a lot of time for researching Firebase Hosting with dynamic cloud functions rewrites. In order to resolve it, you should add Firebase hosting rewrite rule into firebase.json
+    ![solved](./screenshots/rewrite.png)
 
 ## Restful apis:
 
