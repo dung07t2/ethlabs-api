@@ -22,9 +22,9 @@ newsRouter
     .route('/:newsId')
     .get(getSpecificNews)
     .put(editNewsFeed)
-    .delete(decreaseCount, deleteNewsFeed);
+    .delete(deleteNewsFeed, decreaseCount);
 
-newsRouter.route('/').get(getAllNews).post(increaseCount, createNewsFeed);
+newsRouter.route('/').get(getAllNews).post(createNewsFeed, increaseCount);
 newsRouter.get('/newsOfWriter/:writerId', getAllNewsByWriter);
 
 module.exports = newsRouter;

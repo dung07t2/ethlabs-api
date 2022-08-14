@@ -18,6 +18,7 @@ const createNewsFeed = async (req, res) => {
         } else {
             const newsFeed = {
                 ...data,
+                postedAt: firebase.firestore.FieldValue.serverTimestamp()
             };
             firestore.collection('newsFeed').add(newsFeed);
             res.status(200).json({ success: true });
@@ -177,7 +178,7 @@ const getAllNews = async (req, res) => {
                     doc.data().title,
                     doc.data().content,
                     doc.data().postedBy,
-                    doc.data().postedAt,
+                    new Date(doc.data().postedAt.toDate()).toUTCString(),
                     doc.data().link,
                     doc.data().contentUrls,
                     doc.data().imgUrls

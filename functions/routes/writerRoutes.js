@@ -10,7 +10,7 @@ const {
     getWriterUsername,
 } = require('../controllers/writer/writerController');
 const { uploadMedia } = require('../controllers/mediaController');
-const { increaseCount } = require('../controllers/countController');
+const { increaseCount, decreaseCount } = require('../controllers/countController');
 
 const writerRouter = express.Router();
 
@@ -27,11 +27,11 @@ writerRouter
 
 writerRouter
     .route('/:userId')
-    .post(uploadMedia, increaseCount, addWriter, increaseCount)
+    .post(uploadMedia, addWriter, increaseCount)
     .get(getWriter)
     .put(uploadMedia, updateWriter)
     // include role in req.body from frontend
-    .delete(deleteWriter);
+    .delete(deleteWriter, decreaseCount);
 
 writerRouter.route('/getWriterUsername/:userId').get(getWriterUsername);
 
