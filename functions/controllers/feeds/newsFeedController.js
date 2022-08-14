@@ -187,9 +187,10 @@ const getAllNews = async (req, res) => {
             });
             const count = await db.collection('counter').doc('newsFeed').get();
             // console.log(count.data());
-            res.set('Content-Range', count.data().count);
+            const totalNews = count.data().count;
+            res.set('Content-Range', totalNews);
             // res.set('Content-Range', 3);
-            res.status(200).send({ results: newsList.splice(range[0], range[1] + 1), total: range[1] + 1 });
+            res.status(200).send({ results: newsList.splice(range[0], range[1] + 1), total: range[1] + 1 > totalNews ? totalNews : range[1] + 1});
         }
     } catch (error) {
         console.log('Error getting documents: ', error);
